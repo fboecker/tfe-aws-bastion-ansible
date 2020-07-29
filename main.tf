@@ -3,12 +3,15 @@ terraform {
 }
 
 provider "aws" {
-    region = var.aws_region
-    version = "=2.55.0"
+  access_key = var.AWS_ACCESS_KEY
+  secret_key = var.AWS_SECRET_KEY
+  region = var.aws_region
+  version = "=2.55.0"
 }
 
-resource "aws_key_pair" "joestack_aws" {
-  key_name   = "joestack_aws"
+resource "aws_key_pair" "stack_aws" {
+  key_name   = "stack_aws"
+  #public_key = file(var.pub_key)
   public_key = var.pub_key
 }
 

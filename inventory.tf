@@ -79,6 +79,7 @@ resource "null_resource" "provisioner" {
       type        = "ssh"
       host        = aws_instance.bastionhost.public_ip
       user        = var.ssh_user
+      #private_key = file(var.id_rsa_aws)
       private_key = var.id_rsa_aws
       insecure    = true
     }
@@ -103,6 +104,7 @@ resource "null_resource" "cp_ansible" {
       type        = "ssh"
       host        = aws_instance.bastionhost.public_ip
       user        = var.ssh_user
+      #private_key = file(var.id_rsa_aws)
       private_key = var.id_rsa_aws
       insecure    = true
     }
@@ -132,6 +134,7 @@ resource "null_resource" "ansible_run" {
     type        = "ssh"
     host        = aws_instance.bastionhost.public_ip
     user        = var.ssh_user
+    #private_key = file(var.id_rsa_aws)
     private_key = var.id_rsa_aws
     insecure    = true
   }

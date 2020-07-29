@@ -1,6 +1,8 @@
+variable "AWS_ACCESS_KEY" {}
+variable "AWS_SECRET_KEY" {}
+
 variable "aws_region" {
   description = "AWS region"
-  default     = "us-east-1"
 }
 
 variable "owner" {
@@ -16,7 +18,7 @@ variable "ttl" {
 }
 variable "web_node_count" {
   description = "number of worker nodes"
-  default     = "5"
+  default     = "3"
 }
 
 variable "ssh_user" {
@@ -40,6 +42,7 @@ variable "pub_key" {
 
 variable "key_name" {
   description = "The name of the public key"
+  default = "stack_aws"
 }
 
 variable "id_rsa_aws" {
@@ -48,7 +51,6 @@ variable "id_rsa_aws" {
 
 variable "dns_domain" {
   description = "DNS domain suffix"
-  default     = "joestack.xyz"
 }
 
 variable "network_address_space" {
